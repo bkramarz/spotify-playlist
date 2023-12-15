@@ -29,7 +29,7 @@ for song in song_dict:
 # Create playlist and add songs
 
 playlist_create = sp.user_playlist_create(
-    user="benkramarz",
+    user=//Enter user id,
     name=f"{date} KK jam",
     public=True,
     collaborative=False,
