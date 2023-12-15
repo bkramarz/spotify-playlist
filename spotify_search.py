@@ -2,8 +2,8 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 import os
 
-os.environ["SPOTIPY_CLIENT_ID"] = "63a4bee8ef494519b4b94df8a05aa3e2"
-os.environ["SPOTIFY_CLIENT_SECRET"] = "0100d66e1c9a4df98fd2535262602c86"
+os.environ["SPOTIFY_CLIENT_ID"] = //Enter Spotify client id
+os.environ["SPOTIFY_CLIENT_SECRET"] = //Enter Spotify client secret
 
 # Available scopes:
 
@@ -50,7 +50,7 @@ class SpotifySearch(spotipy.Spotify):
         self.scope = scope
         self.auth_manager = SpotifyOAuth(scope=self.scope,
                                          client_secret=os.environ.get("SPOTIFY_CLIENT_SECRET"),
-                                         client_id=os.environ.get("SPOTIPY_CLIENT_ID"),
+                                         client_id=os.environ.get("SPOTIFY_CLIENT_ID"),
                                          redirect_uri="https://localhost:8888/callback")
 
     def get_artist_uri(self, artist_name):
