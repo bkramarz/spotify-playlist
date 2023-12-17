@@ -1,5 +1,6 @@
 import pandas
 from spotify_search import SpotifySearch
+import os
 
 # Instantiate SpotifySearch object
 
@@ -29,7 +30,7 @@ for song in song_dict:
 # Create playlist and add songs
 
 playlist_create = sp.user_playlist_create(
-    user=//Enter user id,
+    user=os.environ.get("SPOTIFY_USER_ID"),
     name=f"{date} KK jam",
     public=True,
     collaborative=False,
