@@ -49,7 +49,7 @@ class SpotifySearch(spotipy.Spotify):
         self.auth_manager = SpotifyOAuth(scope=self.scope,
                                          client_secret=os.environ.get("SPOTIFY_CLIENT_SECRET"),
                                          client_id=os.environ.get("SPOTIFY_CLIENT_ID"),
-                                         redirect_uri="http://localhost:8888/callback")
+                                         redirect_uri="https://localhost:8888/callback")
 
     def get_artist_uri(self, artist_name):
         return self.search(q=f"artist: {artist_name}")["tracks"]["items"][0]["artists"][0]["uri"]
