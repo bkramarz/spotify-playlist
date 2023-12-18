@@ -2,9 +2,6 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 import os
 
-os.environ["SPOTIFY_CLIENT_ID"] = //Enter Spotify client id
-os.environ["SPOTIFY_CLIENT_SECRET"] = //Enter Spotify client secret
-
 # Available scopes:
 
 # Images
@@ -45,8 +42,9 @@ os.environ["SPOTIFY_CLIENT_SECRET"] = //Enter Spotify client secret
 
 class SpotifySearch(spotipy.Spotify):
 
-    def __init__(self , scope):
+    def __init__(self):
         super().__init__()
+        scope = "user-library-read,playlist-modify-public"
         self.scope = scope
         self.auth_manager = SpotifyOAuth(scope=self.scope,
                                          client_secret=os.environ.get("SPOTIFY_CLIENT_SECRET"),
